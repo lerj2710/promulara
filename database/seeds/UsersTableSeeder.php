@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
         $data = [
             'id'=>1,
             'user' => 'admin',
-            'mail'=> 'admin@gmail.com',
+            'email'=> 'admin@gmail.com',
             'password' =>  Hash::make('123456'),
             'role_id' => '1',
             'status_id' => '1',

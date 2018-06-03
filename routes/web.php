@@ -11,7 +11,15 @@
 |
 */
 
-Route::resource('products','ProductsController');
+
+//Creamos un grupo de admin para que tenga un prefijo las rutas de la administracion
+Route::group(['as' => 'admin.','prefix'=>'admin'],function() {
+
+    Route::resource('category','CategoriaController');
+    Route::resource('products','ProductsController');
+
+});
+
 Route::get('/',function (){
     return view('index');
 });

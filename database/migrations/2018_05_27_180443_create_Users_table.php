@@ -16,8 +16,9 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('User');
-			$table->string('mail');
+			$table->string('email');
 			$table->string('password');
+            $table->rememberToken();
 			$table->integer('role_id')->unsigned()->index('users_role_id_foreign');
 			$table->integer('status_id')->unsigned()->index('users_status_id_foreign');
 			$table->integer('people_id')->unsigned()->index('users_people_id_foreign');
