@@ -14,8 +14,8 @@ class AddForeignKeysToDetailsTable extends Migration {
 	{
 		Schema::table('details', function(Blueprint $table)
 		{
-			$table->foreign('invoice_id')->references('id')->on('Invoices')->onUpdate('CASCADE')->onDelete('RESTRICT');
-			$table->foreign('products_id')->references('id')->on('products')->onUpdate('CASCADE')->onDelete('RESTRICT');
+			$table->foreign('invoice_id')->references('id')->on('Invoices')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('products_id')->references('id')->on('products')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 

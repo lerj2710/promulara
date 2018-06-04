@@ -14,8 +14,8 @@ class AddForeignKeysToPaymentsTable extends Migration {
 	{
 		Schema::table('payments', function(Blueprint $table)
 		{
-			$table->foreign('bank_id')->references('id')->on('bank')->onUpdate('CASCADE')->onDelete('RESTRICT');
-			$table->foreign('invoice_id')->references('id')->on('Invoices')->onUpdate('CASCADE')->onDelete('RESTRICT');
+			$table->foreign('bank_id')->references('id')->on('bank')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('invoice_id')->references('id')->on('Invoices')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 

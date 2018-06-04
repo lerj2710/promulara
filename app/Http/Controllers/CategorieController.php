@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\products;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
-class CategoriaController extends Controller
+class CategorieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('admin.category.index',["categories" => $categories]);
+        //
     }
 
     /**
@@ -28,7 +25,6 @@ class CategoriaController extends Controller
     public function create()
     {
         //
-        return view('admin.category.create');
     }
 
     /**
@@ -39,17 +35,7 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'category' => 'required|string|min:2|max:50',
-
-            'descripcion'=> 'required|string|min:5|max:100',
-
-            ]);
-        $category = new Category();
-        $category->category =$request->category;
-        $category->description=$request->descripcion;
-        $category->save();
-        return \redirect()->to('admin/category');
+        //
     }
 
     /**
@@ -71,8 +57,7 @@ class CategoriaController extends Controller
      */
     public function edit(Category $category)
     {
-
-        return view('admin.category.edit',["category" => $category]);
+        //
     }
 
     /**
@@ -84,17 +69,7 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $this->validate($request,[
-            'category' => 'required|string|min:2|max:50',
-
-            'descripcion'=> 'required|string|min:5|max:100',
-
-        ]);
-
-        $category->category =$request->category;
-        $category->description=$request->descripcion;
-        $category->update();
-        return \redirect()->to('admin/category');
+        //
     }
 
     /**
@@ -105,11 +80,6 @@ class CategoriaController extends Controller
      */
     public function destroy(Category $category)
     {
-
-        $products = $category->products;
-        $products->delete();
-        $category->delete();
-        return \redirect()->to('admin/category');
-
+        //
     }
 }

@@ -10,15 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['as' => 'admin.','prefix'=>'admin'],function(){
 
-
-//Creamos un grupo de admin para que tenga un prefijo las rutas de la administracion
-Route::group(['as' => 'admin.','prefix'=>'admin'],function() {
-
-    Route::resource('category','CategoriaController');
     Route::resource('products','ProductsController');
+    Route::resource('category','CategoriaController');
 
 });
+
 
 Route::get('/',function (){
     return view('index');

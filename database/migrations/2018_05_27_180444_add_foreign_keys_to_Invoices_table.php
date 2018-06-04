@@ -14,8 +14,8 @@ class AddForeignKeysToInvoicesTable extends Migration {
 	{
 		Schema::table('Invoices', function(Blueprint $table)
 		{
-			$table->foreign('status_id')->references('id')->on('status')->onUpdate('CASCADE')->onDelete('RESTRICT');
-			$table->foreign('user_id')->references('id')->on('Users')->onUpdate('CASCADE')->onDelete('RESTRICT');
+			$table->foreign('status_id')->references('id')->on('status')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('user_id')->references('id')->on('Users')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 
